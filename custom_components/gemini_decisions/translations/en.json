@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gemini Decisions",
+        "description": "Gemini Decisions answers Home Assistant's evaluate tasks with Google's Decisions API. Pick which Gemini API key it should use. Reusing your Google Gemini key means both share one Google quota.",
+        "data": {
+          "key_source": "API key"
+        }
+      },
+      "api_key": {
+        "title": "Gemini API key",
+        "description": "Paste a Gemini API key from Google AI Studio.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Google rejected the API key",
+        "description": "Paste a working Gemini API key.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reconfigure": {
+        "title": "Change the API key",
+        "description": "Paste the Gemini API key to use from now on.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Google rejected this API key.",
+      "permission_denied": "This key works but can't use the Gemini API. Check that the Generative Language API is enabled for its Google project.",
+      "cannot_connect": "Couldn't reach Google. Check the internet connection and try again.",
+      "unknown": "Something unexpected went wrong. Check the logs."
+    },
+    "abort": {
+      "already_configured": "Gemini Decisions is already set up.",
+      "single_instance_allowed": "Gemini Decisions is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gemini Decisions options",
+        "description": "Caps stop a runaway automation from running up a bill. Attachments, such as camera snapshots, are off by default: on Google's free tier, Google may use what you send to improve its products.",
+        "data": {
+          "max_requests_per_minute": "Most requests per minute",
+          "max_requests_per_day": "Most requests per day",
+          "timeout": "Time limit per call (seconds)",
+          "allow_attachments": "Allow attachments (images, audio, video, PDF)",
+          "image_resolution": "Image and video detail",
+          "max_attachment_mb": "Most attachment data per call (MB, after encoding)",
+          "model": "Model"
+        }
+      }
+    },
+    "error": {
+      "invalid_model": "Use a model name such as gemini-decision-1."
+    }
+  },
+  "issues": {
+    "daily_cap_reached": {
+      "title": "Gemini Decisions hit its daily cap",
+      "description": "Gemini Decisions stopped answering because it reached its cap of {cap} requests today. It starts again at midnight. If this was expected, raise the cap in its options; if not, check which automation is calling ai_task.evaluate so often."
+    }
+  }
+}

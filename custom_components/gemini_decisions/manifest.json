@@ -1,0 +1,13 @@
+{
+  "domain": "gemini_decisions",
+  "name": "Gemini Decisions",
+  "codeowners": ["@the-LALEL"],
+  "config_flow": true,
+  "documentation": "https://github.com/the-LALEL/ha-gemini-decisions",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/the-LALEL/ha-gemini-decisions/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}
